@@ -26,8 +26,9 @@ func servePDF(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	listenAddr := "0.0.0.0:" + os.Getenv("PORT")
 	http.HandleFunc("/dandelion-and-co-flyer", servePDF)
-	err := http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(listenAddr, nil)
 	if err != nil {
 		fmt.Println(err)
 	}
