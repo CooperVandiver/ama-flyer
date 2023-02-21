@@ -26,7 +26,7 @@ func servePDF(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", servePDF)
+	http.HandleFunc("/dandelion-and-co-flyer", servePDF)
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		fmt.Println(err)
